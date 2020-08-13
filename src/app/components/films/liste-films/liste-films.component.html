@@ -1,0 +1,16 @@
+<div class="container backgroundColor">
+<div class="row row-cols-1 row-cols-md-3" >
+    <div class="col mb-4" *ngFor="let film of filmList">
+      <div class="card h-100">
+        <img src="https://picsum.photos/id/{{film.id * 10}}/200" class="card-img-top h-15" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{film.nom}}</h5>
+          <p class="card-text">{{film.description}}</p>
+          <a [routerLink]="['/liste', film.id]" class="btn btn-primary"> voir details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,8 @@
+<p>film works!</p>
+<h2>{{film.nom}}</h2>
+<p>{{film.description}}</p>
+<p>{{film.duree}}</p>
+<p>{{film.releaseYear}}</p>
+<p>{{film.language.nom}}</p>
+<a [routerLink]="['/liste-seances', film.id]" class="btn btn-primary" >seances</a>
+
