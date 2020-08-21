@@ -19,6 +19,10 @@ export class SeanceWebService {
     return this.http.get<any[]>(this.baseUrl + `liste-seances/${filmId}`);
   }
 
+  getSeance(): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl + 'liste-seances');
+  }
+
 //   addFilm(FilmToAdd: any): Observable<any> {
 //     return this.http.post(this.baseUrl + 'Films', FilmToAdd);
 //   }

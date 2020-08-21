@@ -9,6 +9,7 @@ import { SeanceWebService } from './shared/webservices/seances.webservice';
 import { FilmComponent } from './components/films/film/film.component';
 import { SeanceComponent } from './components/seances/seance/seance.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ListeSeancesComponent } from './components/seances/liste-seances/liste-seances.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from './components/header/header.component';
     ListeFilmsComponent,
     FilmComponent,
     SeanceComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListeSeancesComponent
   ],
   imports: [
     BrowserModule,
