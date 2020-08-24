@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestObservableService } from '../../film-observable.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private testObservableService: TestObservableService) { }
 
   ngOnInit(): void {
+  }
+
+  setObservable(message: string) {
+    console.log('setObservable', message);
+    this.testObservableService.setMessageSubject(message);
   }
 
 }

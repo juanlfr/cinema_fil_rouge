@@ -10,8 +10,8 @@ import { SeanceWebService } from './shared/webservices/seances.webservice';
 import { FilmComponent } from './components/films/film/film.component';
 import { SeanceComponent } from './components/seances/seance/seance.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ListeSeancesComponent } from './components/seances/liste-seances/liste-seances.component';
 import { FormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     FilmComponent,
     SeanceComponent,
     HeaderComponent,
-    FilmFormComponent
+    FilmFormComponent,
+    ListeSeancesComponent
   ],
   imports: [
     BrowserModule,

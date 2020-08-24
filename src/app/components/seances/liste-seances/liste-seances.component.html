@@ -1,0 +1,21 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Heure</th>
+        <th scope="col">Film</th>
+        <th scope="col">Salle</th>
+        <th scope="col">Cinema</th>
+        <th scope="col">Reservations</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let seance of seanceList">
+        <td>{{seance.dateDebut}}</td>
+        <td>{{seance.film.nom}}</td>
+        <td>{{seance.salle.nom}}</td>
+        <td>{{seance.salle.cinemas.nom}}</td>
+        <td> <button class="btn btn-primary">Réserver</button></td>
+      </tr>
+    </tbody>
+  </table>
