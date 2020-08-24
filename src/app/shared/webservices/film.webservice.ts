@@ -1,3 +1,5 @@
+import { Category } from './models/category.model';
+import { Film } from './models/film.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
@@ -15,12 +17,25 @@ export class FilmWebService {
   constructor(private http: HttpClient) { }
 
 
-  getFilms(): Observable<any[]> {
+  getFilms(): Observable<Film[]> {
     return this.http.get<any[]>(this.baseUrl + 'liste');
   }
 
-  getFilm(id): Observable<any> {
+  getCategories(): Observable<Category[]> {
+    return this.http.get<any[]>(this.baseUrl + 'categories');
+  }
+
+  getLanguages(): Observable<Category[]> {
+    return this.http.get<any[]>(this.baseUrl + 'languages');
+  }
+
+  getFilm(id): Observable<Film> {
     return this.http.get<any>(this.baseUrl + `liste/${id}`);
+  }
+
+  postFilm(filmToAdd: Film): Observable<any> {
+    console.log(filmToAdd);
+    return this.http.post(this.baseUrl + 'ajouter/', filmToAdd);
   }
 
 

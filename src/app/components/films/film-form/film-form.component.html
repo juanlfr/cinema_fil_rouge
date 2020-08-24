@@ -1,0 +1,50 @@
+<form (ngSubmit)="handleSubmitForm(film)" #filmForm="ngForm">
+    <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" class="form-control" id="name"
+               [(ngModel)]="film.nom" name="nom">
+      </div>
+      <p>{{film.nom}}</p>
+      
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea type="text-area"  class="form-control" id="description"
+               [(ngModel)]="film.description" name="description">
+        </textarea>
+
+      </div>
+
+      <div class="form-group">
+        <label for="duree">Duree</label>
+        <input type="number"  class="form-control" id="duree"
+               [(ngModel)]="film.duree" name="duree">
+      </div>
+
+      <div class="form-group">
+        <label for="releaseYear">Annéde de sortie</label>
+        <input type="number"  class="form-control" id="releaseYear"
+               [(ngModel)]="film.releaseYear" name="releaseYear">
+      </div>
+      
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control"  id="category"
+                [(ngModel)]="film.category" name="category" >
+          <option *ngFor="let category of categories"  [value]="category.id">{{category.nom}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="language">Langage</label>
+        <select class="form-control"  id="language" [(ngModel)]="film.language" name="language" >
+              <option *ngFor="let language of languages" [value]="language.id">{{language.nom}}</option>
+        </select>
+      </div>
+
+      <div>
+        <button class="btn btn-primary" type="submit" [disabled]="!filmForm.form.valid">
+            Ajouter
+        </button>
+    </div>
+
+</form>
