@@ -35,7 +35,7 @@ export class FilmWebService {
 
   postFilm(filmToAdd: Film): Observable<any> {
     console.log(filmToAdd);
-    return this.http.post(this.baseUrl + 'ajouter/', filmToAdd);
+    return this.http.post(this.baseUrl + 'ajouter', filmToAdd);
   }
 
 

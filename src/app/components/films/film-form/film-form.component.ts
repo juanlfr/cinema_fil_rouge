@@ -18,36 +18,50 @@ export class FilmFormComponent implements OnInit {
   constructor(private filmWebService: FilmWebService) { }
 
   ngOnInit(): void {
-    //console.log(this.film);
     this.film = new Film();
-    this.filmWebService.getCategories().subscribe(
-      (data) => {
-        this.categories = data;
+    console.log(this.film);
+    this.getCategories();
+    this.getLangauges();
+  }
+
+  handleSubmitForm(film: Film): void {
+    console.log(film.category);
+    // const categoryString = JSON.parse(film.category);
+    film.category =  film.category as Category;
+
+    console.log(film);
+
+    this.filmWebService.postFilm(film).subscribe(
+      () => {
+        this.film = film;
+        console.log(film);
+      },
+      (error) => {
+        // Error
+        console.error('CallObservableComponent error', error);
       }
     );
+
+
+  }
+  getLangauges(): void{
     this.filmWebService.getLanguages().subscribe(
       (data) => {
         this.languages = data;
+        console.log(this.languages);
       }
     );
   }
 
-  handleSubmitForm(film: Film){
-
-  //console.log(film);
-  this.filmWebService.postFilm(film).subscribe(
-    () => {
-      this.film = film;
-      console.log(film);
-    },
-    (error) => {
-      // Error
-      console.error('CallObservableComponent error', error);
-    }
-  );
-
-
+  getCategories(): void{
+    this.filmWebService.getCategories().subscribe(
+      (data) => {
+        this.categories = data;
+        console.log(this.categories);
+      }
+    );
   }
+
 
 
 }

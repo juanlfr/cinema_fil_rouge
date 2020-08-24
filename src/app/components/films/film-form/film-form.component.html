@@ -28,18 +28,21 @@
       
       <div class="form-group">
         <label for="category">Category</label>
-        <select class="form-control"  id="category"
-                [(ngModel)]="film.category" name="category" >
-          <option *ngFor="let category of categories"  [value]="category.id">{{category.nom}}</option>
+        <select class="form-control"  id="category" [(ngModel)]="film.category" name="category" >
+          <option *ngFor="let category of categories"  [ngValue]="category">{{category.nom}}</option>
         </select>
       </div>
+
+      
 
       <div class="form-group">
         <label for="language">Langage</label>
         <select class="form-control"  id="language" [(ngModel)]="film.language" name="language" >
-              <option *ngFor="let language of languages" [value]="language.id">{{language.nom}}</option>
+              <option *ngFor="let language of languages" [ngValue]="language">{{language.nom}}</option>
+
         </select>
       </div>
+     
 
       <div>
         <button class="btn btn-primary" type="submit" [disabled]="!filmForm.form.valid">
