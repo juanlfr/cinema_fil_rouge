@@ -10,6 +10,7 @@ import { FilmComponent } from './components/films/film/film.component';
 import { SeanceComponent } from './components/seances/seance/seance.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListeSeancesComponent } from './components/seances/liste-seances/liste-seances.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ListeSeancesComponent } from './components/seances/liste-seances/liste-
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     FilmWebService,

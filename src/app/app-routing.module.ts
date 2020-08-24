@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'liste', component: ListeFilmsComponent},
   {path: 'liste/:id', component: FilmComponent},
   {path: 'liste-seances/:filmId', component: SeanceComponent},
-  {path: 'liste-seances', component: ListeSeancesComponent}
+  {path: 'liste-seances', component: ListeSeancesComponent},
 
 ];
 
