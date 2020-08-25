@@ -12,6 +12,8 @@ import { SeanceComponent } from './components/seances/seance/seance.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListeSeancesComponent } from './components/seances/liste-seances/liste-seances.component';
 import { FormsModule } from '@angular/forms';
+import { ClientFormComponent } from './components/client-form/client-form.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     SeanceComponent,
     HeaderComponent,
     FilmFormComponent,
-    ListeSeancesComponent
+    ListeSeancesComponent,
+    ClientFormComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<form (ngSubmit)="handleSubmitClientForm(client)" #clientForm="ngForm">
+
+    <div class="form-group">
+      <label for="Nom">Nom</label>
+      <input type="text" class="form-control" id="Nom" placeholder="Jean" [(ngModel)]="client.nom" name="nom">
+    </div>
+
+    
+
+    <div class="form-group">
+        <label for="prenom">Prénom</label>
+      <input type="text" class="form-control" id="prenom" placeholder="Dupont" [(ngModel)]="client.prenom" name="prenom">
+    </div>
+
+    <h5>Avez-vous une carte de fidelité</h5>
+
+    <div  class="form-check">
+        <input class="form-check-input" type="radio" name="carteFidelite" id="carteFideliteOui" value="true" [(ngModel)]="client.carteFidelite">
+        <label class="form-check-label" for="carteFideliteOui">
+          Oui
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="carteFidelite" id="carteFideliteNon" value="false" [(ngModel)]="client.carteFidelite">
+        <label class="form-check-label" for="carteFideliteNon">
+            Non
+        </label>
+    </div>
+    <p>{{client.carteFidelite}}</p>
+
+    <div>
+        <button class="btn btn-primary" type="submit" [disabled]="!clientForm.form.valid">
+            Réserver
+        </button>
+    </div>
+  </form>
