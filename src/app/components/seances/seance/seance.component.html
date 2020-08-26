@@ -11,11 +11,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let seance of seances">
-        <td>{{seance.dateDebut}}</td>
-        <td>{{seance.film.nom}}</td>
-        <td>{{seance.salle.nom}}</td>
-        <td>{{seance.salle.cinemas.nom}}</td>
-        <td> <button routerLink = "/client-form" class="btn btn-primary">Réserver</button></td>
+        <td >{{seance.dateDebut}}</td>
+        <td >{{seance.film.nom}}</td>
+        <td >{{seance.salle.nom}}</td>
+        <td >{{seance.salle.cinemas[0]?.nom}}</td>
+        <!-- <td>{{seance | json}}</td> -->
+        <td> <button class="btn btn-primary" (click)="setSeanceIntoReservation(seance)">Réserver</button></td>
       </tr>
     </tbody>
   </table>

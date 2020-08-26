@@ -1,3 +1,5 @@
+import { ObservableService } from './../../shared/services/observableService.service';
+import { Reservation } from './../../shared/webservices/models/reservation.model';
 import { ClientWebservice } from './../../shared/webservices/client.webservice';
 import { Client } from './../../shared/webservices/models/client.model';
 import { Component, OnInit } from '@angular/core';
@@ -12,11 +14,17 @@ export class ClientFormComponent implements OnInit {
 
   clients: Client[];
   client: Client;
+  reservation: Reservation;
 
-  constructor(private clientWebService: ClientWebservice, private router: Router) { }
+  constructor(private clientWebService: ClientWebservice, private router: Router, private observableService: ObservableService) { }
 
   ngOnInit(): void {
     this.client = new Client();
+    this.observableService.getReservationSubject().subscribe(
+      (dataSeanceReservation) => {
+        this.reservation = dataSeanceReservation;
+      }
+    );
   }
 
   handleSubmitClientForm(client: Client): void {
@@ -26,12 +34,20 @@ export class ClientFormComponent implements OnInit {
         console.log(this.client);
       },
       (error) => {
-        // Error
         console.error('CallObservableComponent error', error);
       }
     );
-    this.router.navigate(['/liste']);
+    console.log(client);
+    this.setClientIntoReservation(client);
+    this.router.navigate(['/reservation']);
 
+  }
+
+  setClientIntoReservation(client: Client): void {
+    console.log('setSeanceIntoReservation');
+    this.reservation.client = client;
+    this.observableService.setReservationSubject(this.reservation);
+    console.log(this.reservation);
   }
 
 }

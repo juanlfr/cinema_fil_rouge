@@ -1,3 +1,6 @@
 <label>Nombre de places</label>
-<input type="numer" [(ngModel)]="reservation.seatsReserved" />
+<input type="numer" [(ngModel)]="seatsReserved" name="seatsReserved" /><br />
+<button class="btn btn-primary" (click)="setReservation()">Reserver</button>
+
+<p>{{reservation.client.nom}}{{reservation.seance.dateDebut}}</p>
 
