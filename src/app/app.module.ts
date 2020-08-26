@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { FilmFormComponent } from './components/films/film-form/film-form.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,8 @@ import { SeanceComponent } from './components/seances/seance/seance.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ListeSeancesComponent } from './components/seances/liste-seances/liste-seances.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalFilmComponent } from './shared/modal-film/modal-film.component';
 
 @NgModule({
   declarations: [
@@ -21,18 +24,27 @@ import { FormsModule } from '@angular/forms';
     SeanceComponent,
     HeaderComponent,
     FilmFormComponent,
-    ListeSeancesComponent
+    ListeSeancesComponent,
+    ModalFilmComponent
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
+
   ],
   providers: [
     FilmWebService,
     SeanceWebService
   ],
-  bootstrap: [AppComponent]
+
+  bootstrap: [AppComponent],
+
+  entryComponents: [ListeFilmsComponent, ModalFilmComponent]
 })
+
 export class AppModule { }

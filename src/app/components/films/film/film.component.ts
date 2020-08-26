@@ -17,8 +17,7 @@ export class FilmComponent implements OnInit {
    }
 
   ngOnInit(): void {
- 
-    
+
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       this.filmWebService.getFilm(id).subscribe(

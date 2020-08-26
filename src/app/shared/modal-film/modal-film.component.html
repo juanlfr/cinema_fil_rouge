@@ -1,0 +1,16 @@
+<h2>{{ data?.film?.nom }}</h2>
+<p>{{ data?.film?.description }}</p>
+
+<h3>Durée du film</h3>
+<p>{{ data?.film.duree }} minutes</p>
+
+<h3>Année de réalisation</h3>
+<p>{{ data?.film?.releaseYear }}</p>
+
+<h3>Nationalité du film</h3>
+<p>{{ data?.film?.language.nom }}</p>
+
+<h3>Genre</h3>
+<p>{{ data?.film?.category.nom }}</p>
+
+<a [routerLink]="['/liste-seances', data?.film?.id]" class="btn btn-primary">Seances</a>

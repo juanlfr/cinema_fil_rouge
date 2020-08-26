@@ -4,9 +4,9 @@ import { Category } from './category.model';
 export class Film {
 
     public id: number;
-	public nom: string;
-	public description: string;
-	public duree: number;
+    public nom: string;
+    public description: string;
+    public duree: number;
     public releaseYear: number;
     public category: Category;
     public language: Language;

@@ -1,7 +1,10 @@
+import { Film } from './../../../shared/webservices/models/film.model';
+import { ModalFilmComponent } from './../../../shared/modal-film/modal-film.component';
 import { FilmWebService } from '../../../shared/webservices/film.webservice';
 import { Component, OnInit } from '@angular/core';
 import { TestObservableService } from '../../../film-observable.service';
 import { Subscription } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-liste-films',
@@ -22,7 +25,8 @@ export class ListeFilmsComponent implements OnInit {
 
   constructor(
     private filmWebService: FilmWebService,
-    private testObservableService: TestObservableService
+    private testObservableService: TestObservableService,
+    public dialog: MatDialog
     ) { }
 
   ngOnInit(): void {
@@ -56,4 +60,11 @@ export class ListeFilmsComponent implements OnInit {
     this.filmListAfterSearch = this.filmList;
   }
 }
+
+  openDialog(film): void{
+    this.dialog.open(ModalFilmComponent, {
+      data : {film
+      },
+    });
+  }
 }

@@ -2,18 +2,15 @@
   
   <input type="text" [(ngModel)]="searchValue" (ngModelChange)="handleSearchIntoList()"/>
  
-<div class="row row-cols-1 row-cols-md-3" >
-    <div class="col mb-4" *ngFor="let film of filmListAfterSearch">
-      <div class="card h-100">
-        <img src="../assets/img/{{film.id}}.jpg" class="card-img-top h-15" alt="...">
-        <div class="card-body">
-          <h5 class="card-title" >{{film.nom}}</h5>
-          <p class="card-text">{{film.description}}</p>
-          <a [routerLink]="['/liste', film.id]" class="btn btn-primary"> voir details</a>
+  <div class="row row-cols-1 row-cols-md-3" >
+        <div class="col mb-4" *ngFor="let film of filmListAfterSearch">
+          <div class="card h-100" (click)="openDialog(film)">
+            <img src="../assets/img/{{ film.id }}.jpg" class="card-img-top h-15" alt="..."/>
+            <div class="card-body">
+              <h2 class="card-title" >{{ film.nom }}</h2>
+              <p class="card-text">{{ film.description }}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+   </div>
 </div>
-
-
