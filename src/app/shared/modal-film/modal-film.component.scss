@@ -1,0 +1,22 @@
+.app-body-card{
+    background-color: black;
+    color: white;
+}
+
+.app-body-information{
+    display: flex;
+    flex-direction: row;
+}
+
+.app-body-img{
+    display: block;
+}
+
+.app-body-text{
+    margin-right: 10%;
+}
+
+.mat-dialog-actions{
+    display: flex;
+    justify-content: flex-end;
+}

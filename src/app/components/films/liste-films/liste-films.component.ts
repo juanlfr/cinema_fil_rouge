@@ -63,6 +63,7 @@ export class ListeFilmsComponent implements OnInit {
 
   openDialog(film): void{
     this.dialog.open(ModalFilmComponent, {
+      panelClass: 'custom-dialog-container',
       data : {film
       },
     });

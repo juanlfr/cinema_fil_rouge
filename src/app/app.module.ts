@@ -15,6 +15,7 @@ import { ListeSeancesComponent } from './components/seances/liste-seances/liste-
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalFilmComponent } from './shared/modal-film/modal-film.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ModalFilmComponent } from './shared/modal-film/modal-film.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
 
   ],
   providers: [

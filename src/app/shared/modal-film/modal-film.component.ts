@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Film } from '../webservices/models/film.model';
 
 @Component({
@@ -11,7 +11,8 @@ export class ModalFilmComponent implements OnInit {
 
   film: Film;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
+              public dialogRef: MatDialogRef<ModalFilmComponent>) { }
 
   ngOnInit(): void {
   }

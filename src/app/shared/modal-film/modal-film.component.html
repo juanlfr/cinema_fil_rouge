@@ -1,16 +1,41 @@
-<h2>{{ data?.film?.nom }}</h2>
-<p>{{ data?.film?.description }}</p>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<body>
+        <mat-dialog-content>
+            <mat-card class="app-body-card">
 
-<h3>Durée du film</h3>
-<p>{{ data?.film.duree }} minutes</p>
+                <mat-card>
+                    <mat-dialog-actions>
+                        <button mat-dialog-close class="btn btn-primary">x</button>
+                    </mat-dialog-actions>
+                <h1 mat-card-title >{{ data?.film?.nom }}</h1>
+                <p>{{ data?.film?.description }}</p>
+                </mat-card>
+                    <div class="app-body-information">
+                        <div class="app-body-text">
+                            <h3>Durée du film</h3>
+                            <p>{{ data?.film?.duree }} minutes</p>
 
-<h3>Année de réalisation</h3>
-<p>{{ data?.film?.releaseYear }}</p>
+                            <h3>Année de réalisation</h3>
+                            <p>{{ data?.film?.releaseYear }}</p>
 
-<h3>Nationalité du film</h3>
-<p>{{ data?.film?.language.nom }}</p>
+                            <h3>Nationalité du film</h3>
+                            <p>{{ data?.film?.language.nom }}</p>
 
-<h3>Genre</h3>
-<p>{{ data?.film?.category.nom }}</p>
-
-<a [routerLink]="['/liste-seances', data?.film?.id]" class="btn btn-primary">Seances</a>
+                            <h3>Genre</h3>
+                            <p>{{ data?.film?.category.nom }}</p>
+                            <a [routerLink]="['/liste-seances', data?.film?.id]" class="btn btn-primary" mat-dialog-close>Seances</a>
+                        </div>
+                        <div class="app-body-img">
+                            <img src="../assets/img/{{ data.film.id }}.jpg" alt="..."/> 
+                        </div>
+                    </div>
+            </mat-card>
+        </mat-dialog-content>
+</body>
+</html>
