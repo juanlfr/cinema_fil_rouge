@@ -11,7 +11,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let seance of seances">
-        <td >{{seance.dateDebut}}</td>
+        <td >{{seance.dateDebut | date: 'medium'}}</td>
         <td >{{seance.film.nom}}</td>
         <td >{{seance.salle.nom}}</td>
         <td >{{seance.salle.cinemas[0]?.nom}}</td>

@@ -28,15 +28,15 @@ export class ClientFormComponent implements OnInit {
   }
 
   handleSubmitClientForm(client: Client): void {
-    this.clientWebService.postClient(client).subscribe(
-      (newClient) => {
-        this.client = newClient;
-        console.log(this.client);
-      },
-      (error) => {
-        console.error('CallObservableComponent error', error);
-      }
-    );
+    // this.clientWebService.postClient(client).subscribe(
+    //   (newClient) => {
+    //     this.client = newClient;
+    //     console.log(this.client);
+    //   },
+    //   (error) => {
+    //     console.error('CallObservableComponent error', error);
+    //   }
+    // );
     console.log(client);
     this.setClientIntoReservation(client);
     this.router.navigate(['/reservation']);

@@ -1,15 +1,17 @@
-<form (ngSubmit)="handleSubmitClientForm(client)" #clientForm="ngForm">
+<div class="app-client-form">
+  <form  (ngSubmit)="handleSubmitClientForm(client)" #clientForm="ngForm">
+    <h3>Veuillez saisir votre nom et prénom afin d'effectuer la réservation</h3>
 
     <div class="form-group">
       <label for="Nom">Nom</label>
-      <input type="text" class="form-control" id="Nom" placeholder="Jean" [(ngModel)]="client.nom" name="nom">
+      <input type="text" class="form-control" id="Nom" placeholder="Jean" [(ngModel)]="client.nom" name="nom" required>
     </div>
 
     
 
     <div class="form-group">
         <label for="prenom">Prénom</label>
-      <input type="text" class="form-control" id="prenom" placeholder="Dupont" [(ngModel)]="client.prenom" name="prenom">
+      <input type="text" class="form-control" id="prenom" placeholder="Dupont" [(ngModel)]="client.prenom" name="prenom" required>
     </div>
 
     <h5>Avez-vous une carte de fidelité</h5>
@@ -26,11 +28,12 @@
             Non
         </label>
     </div>
-    <p>{{client.carteFidelite}}</p>
+   <br>
 
     <div>
         <button class="btn btn-primary" type="submit" [disabled]="!clientForm.form.valid">
-            Réserver
+            Continuer la réservation
         </button>
     </div>
   </form>
+</div>

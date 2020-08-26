@@ -19,7 +19,7 @@ export class ReservationtWebservice {
 //     return this.http.get<any[]>(this.baseUrl + 'clients');
 //   }
 
-  postClient(reservationToAdd: Reservation): Observable<any> {
+  postReservation(reservationToAdd: Reservation): Observable<any> {
     console.log(reservationToAdd);
     return this.http.post(this.baseUrl + 'ajouterReservation', reservationToAdd);
   }

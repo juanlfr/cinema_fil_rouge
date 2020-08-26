@@ -4,7 +4,7 @@ import { Client } from './client.model';
 
 export class Reservation {
 
-    public localDateTime: Date;
+    public date: Date;
     public cinema: Cinema;
     public client: Client;
     public seatsReserved: number;
@@ -17,7 +17,7 @@ export class Reservation {
         seatsReserved?: number,
         seance?: Seance
     ) {
-        this.localDateTime = localDateTime;
+        this.date = localDateTime;
         this.cinema = cinema;
         this.client = client;
         this.seatsReserved = seatsReserved;

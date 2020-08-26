@@ -10,6 +10,7 @@ import { ModalFilmComponent } from './shared/modal-film/modal-film.component';
 
 
 const routes: Routes = [
+  {path: '', component: ListeFilmsComponent},
   {path: 'liste', component: ListeFilmsComponent},
   {path: 'liste/:id', component: ModalFilmComponent},
   {path: 'liste-seances/:filmId', component: SeanceComponent},
