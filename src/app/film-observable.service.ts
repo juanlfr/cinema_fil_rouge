@@ -6,13 +6,13 @@ import { Subject, Observable, BehaviorSubject } from 'rxjs';
 })
 export class TestObservableService {
 
-  messageSubject$ = new Subject<string>();
+  messageSubject$ = new BehaviorSubject<string>(null);
 
   getMessageSubject(): Observable<string> {
     return this.messageSubject$.asObservable();
   }
 
-  setMessageSubject(value: string) {
+  setMessageSubject(value: string): void {
     this.messageSubject$.next(value);
   }
 

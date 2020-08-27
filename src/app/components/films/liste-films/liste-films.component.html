@@ -1,6 +1,8 @@
 <div class="container backgroundColor">
   
-  <input type="text" [(ngModel)]="searchValue" (ngModelChange)="handleSearchIntoList()"/>
+  <!-- <input type="text" [(ngModel)]="searchValue" (ngModelChange)="handleSearchIntoList()"/> -->
+
+  {{searchValue}}
  
   <div class="row row-cols-1 row-cols-md-3" >
         <div class="col mb-4" *ngFor="let film of filmListAfterSearch">
