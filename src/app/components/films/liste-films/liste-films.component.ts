@@ -19,7 +19,7 @@ export class ListeFilmsComponent implements OnInit {
   searchValue: string;
 
   subscription$: Subscription;
-  message: string;
+
 
   filmListAfterSearch = [];
 
@@ -33,7 +33,8 @@ export class ListeFilmsComponent implements OnInit {
     this.getFilms();
     this.subscription$ = this.testObservableService.getMessageSubject().subscribe(
       (value: string) => {
-        this.message = value;
+        this.searchValue = value;
+        this.handleSearchIntoList(this.searchValue);
       }
     );
   }
@@ -50,11 +51,11 @@ export class ListeFilmsComponent implements OnInit {
     );
   }
 
-  handleSearchIntoList(): void {
-    console.log(this.searchValue);
-    if (this.searchValue){
+  handleSearchIntoList(searchValue: string): void {
+    console.log(searchValue);
+    if (searchValue){
     this.filmListAfterSearch = this.filmList.filter(
-      (film) => film.nom.toUpperCase().includes(this.searchValue.toUpperCase())
+      (film) => film.nom.toUpperCase().includes(searchValue.toUpperCase())
     );
   } else {
     this.filmListAfterSearch = this.filmList;
