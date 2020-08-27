@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalFilmComponent } from './shared/modal-film/modal-film.component';
 import { MatCardModule } from '@angular/material/card';
+import { ClientFormComponent } from './components/client-form/client-form.component';
+import { ReservationComponent } from './components/reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { MatCardModule } from '@angular/material/card';
     HeaderComponent,
     FilmFormComponent,
     ListeSeancesComponent,
-    ModalFilmComponent
+    ModalFilmComponent,
+    ClientFormComponent,
+    ReservationComponent
   ],
 
   imports: [

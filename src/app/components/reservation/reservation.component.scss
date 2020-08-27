@@ -1,13 +1,13 @@
-.app-film-form {
+.app-reservation  {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 40px;
     padding-bottom: 40px;
-    // width: 100%;
-    // margin: 0px;
+    width: 50%;
+    margin: auto;
 }
-form label {
-    width: 500px;
+label{
     font-weight: bold;
+    font-size: 20px;
 }

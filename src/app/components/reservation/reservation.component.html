@@ -1,0 +1,41 @@
+<div class="app-reservation">
+    <table class="table">
+        <thead>
+            <div class="form-group">
+                <label>Veuillez saisir le sombre de places à réserver</label>
+                <input class="form-control" type="number" [(ngModel)]="reservation.seatsReserved" name="seatsReserved" required /><br />
+            </div>
+            <h2>Recapitulatif de la réservation</h2>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Heure de la séance</th>
+            <td>{{reservation.seance.dateDebut | date:'medium'}}</td>
+        </tr>   
+        <tr>
+            <th scope="row">Film</th>
+            <td>{{reservation.seance.film.nom}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Salle</th>
+            <td>{{reservation.seance.salle.nom}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Cinema</th>
+            <td>{{reservation.cinema.nom}}</td>
+        </tr>    
+        <tr>
+            <th scope="row">Nombre de places réservées</th>
+            <td>{{reservation.seatsReserved}}</td>
+        </tr>
+        <tr>    
+            <th scope="row">Date de réservation</th>
+            <td>{{reservation.date | date: 'medium'}}</td>
+        </tr>
+        <tfoot> 
+            <button class="btn btn-primary" (click)="postReservation()">Reserver</button>
+        </tfoot>
+    
+    </table>
+
+</div>
